@@ -15,12 +15,20 @@ namespace BCSS.Editor
 
     public class SkillTypeAdapters : ITypeAdapter
     {
-        public static Dictionary<Type, SkillDataType> dic_convert = new()
+        public static Dictionary<SkillDataType, Type> dic_enum_type = new()
         {
-            { typeof(int),       SkillDataType.Int },
-            { typeof(float),     SkillDataType.Float },
-            { typeof(Vector2),   SkillDataType.Vector2 },
-            { typeof(Vector3),   SkillDataType.Vector3 },
+            { SkillDataType.Int,     typeof(int)     },
+            { SkillDataType.Float,   typeof(float)   },
+            { SkillDataType.Vector2, typeof(Vector2) },
+            { SkillDataType.Vector3, typeof(Vector3) },
+        };
+
+        public static Dictionary<Type, SkillDataType> dic_type_enum = new()
+        {
+            { typeof(int)    , SkillDataType.Int      },
+            { typeof(float)  , SkillDataType.Float    },
+            { typeof(Vector2), SkillDataType.Vector2  },
+            { typeof(Vector3), SkillDataType.Vector3  },
         };
 
         //int

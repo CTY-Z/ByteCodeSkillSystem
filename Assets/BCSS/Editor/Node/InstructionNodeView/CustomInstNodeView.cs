@@ -41,7 +41,7 @@ namespace BCSS.Editor
                 if (m_node.subGraph != null && m_node.subGraph.isSubGraph)
                 {
                     foreach (var item in m_node.subGraph.dic_id_entryValue)
-                        m_node.AddNewInputPort(item.Key);
+                        m_node.AddNewInputPort(item.Key, item.Value);
                 }
             });
 
@@ -115,7 +115,7 @@ namespace BCSS.Editor
         {
             if (m_node.subGraph != graph) return;
 
-            m_node.SetIdentifierList(m_node.subGraph.dic_id_entryValue.Keys.ToList());
+            m_node.SetIdentifierList(m_node.subGraph.dic_id_entryValue);
             m_node.UpdatePortsForField(nameof(m_node.list_input));
         }
 

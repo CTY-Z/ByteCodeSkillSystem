@@ -1,12 +1,15 @@
 using BCSS.Editor;
 using GraphProcessor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Plastic.Newtonsoft.Json.Linq;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.Windows;
+using static UnityEditor.LightingExplorerTableColumn;
 
 namespace BCSS.Editor
 {
@@ -23,7 +26,7 @@ namespace BCSS.Editor
         public List<IPort> list_output;
 
         [SerializeField]
-        private List<string> list_inputPortIdentifier;
+        private Dictionary<string, PortData> list_inputPortIdentifier;
         [SerializeField]
         private List<string> list_outputPortIdentifier;
 
@@ -56,7 +59,7 @@ namespace BCSS.Editor
         public override void InitializePorts()
         {
             if (list_inputPortIdentifier == null)
-                list_inputPortIdentifier = new List<string>();
+                list_inputPortIdentifier = new();
             if (list_outputPortIdentifier == null)
                 list_outputPortIdentifier = new List<string>();
             if (list_input == null)
@@ -81,28 +84,29 @@ namespace BCSS.Editor
             //while (outputPortIdentifiers.Count > portCount)
             //    outputPortIdentifiers.RemoveAt(outputPortIdentifiers.Count - 1);
 
-            for (int i = 0; i < list_inputPortIdentifier.Count; i++)
-            {
-                yield return new PortData
-                {
-                    displayName = $"Iutput  {i}",
-                    displayType = typeof(IPort),
-                    identifier = list_inputPortIdentifier[i],
-                    acceptMultipleEdges = false
-                };
-            }
+            foreach (PortData item in list_inputPortIdentifier.Values)
+                yield return item;
         }
 
         public void AddNewInputPort()
         {
             var parameterType = new GenericMenu();
 
-            foreach (var paramType in SkillTypeAdapters.dic_convert.Keys)
+            foreach (var paramType in SkillTypeAdapters.dic_type_enum.Keys)
             {
                 parameterType.AddItem(new GUIContent(paramType.Name), false, () =>
                 {
                     var identifier = System.Guid.NewGuid().ToString();
-                    list_inputPortIdentifier.Add(identifier);
+
+                    PortData data = new PortData()
+                    {
+                        displayName = paramType.Name,
+                        displayType = paramType,
+                        identifier = identifier,
+                        acceptMultipleEdges = false
+                    };
+
+                    list_inputPortIdentifier.Add(identifier, data);
                     list_input.Add(null);
                     
                     UpdatePortsForField(nameof(list_input));
@@ -113,30 +117,46 @@ namespace BCSS.Editor
             parameterType.ShowAsContext();
         }
 
-        public void AddNewInputPort(string identifier)
+        public void AddNewInputPort(string identifier, IPort portValue)
         {
-            list_inputPortIdentifier.Add(identifier);
-            list_input.Add(null);
+            PortData data = GetPortData(identifier, portValue);
+            list_inputPortIdentifier.Add(identifier, data);
+            list_input.Add(portValue);
 
             UpdatePortsForField(nameof(list_input));
         }
 
-        public void SetIdentifierList(List<string> list_identifier)
+        public void SetIdentifierList(Dictionary<string, IPort> dic_identifier)
         {
-            if (list_identifier == null) return;
+            if (dic_identifier == null) return;
 
-            list_inputPortIdentifier.Clear();
-            list_inputPortIdentifier = list_identifier;
+            foreach (var item in dic_identifier)
+            {
+                if (list_inputPortIdentifier.ContainsKey(item.Key))
+                    continue;
+
+                PortData data = GetPortData(item.Key, item.Value);
+                list_inputPortIdentifier.Add(item.Key, data);
+            }
         }
 
         public void RemoveInputPort(string identifier)
         {
-            int idx = list_inputPortIdentifier.IndexOf(identifier);
+            int idx = -1;
+
+            foreach (var item in list_inputPortIdentifier)
+            {
+                if (item.Key == identifier)
+                    break;
+                idx++;
+            }
+
             if (idx >= 0)
             {
                 if (list_input != null && idx < list_input.Count)
                     list_input.RemoveAt(idx);
 
+                list_inputPortIdentifier.Remove(identifier);
                 subGraph.RemovePortValue(identifier);
             }
             else
@@ -201,6 +221,21 @@ namespace BCSS.Editor
             NodePort port = GetPort(nameof(list_input), dentifier);
             port.GetInputValue(ref v);
             v = value;
+        }
+
+        private PortData GetPortData(string identifier, IPort portValue)
+        {
+            Type dataType = null;
+            SkillTypeAdapters.dic_enum_type.TryGetValue(portValue.type, out dataType);
+            PortData data = new PortData()
+            {
+                displayName = dataType.Name,
+                displayType = dataType,
+                identifier = identifier,
+                acceptMultipleEdges = false
+            };
+
+            return data;
         }
     }
 
