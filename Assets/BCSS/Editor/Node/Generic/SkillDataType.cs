@@ -14,11 +14,10 @@ namespace BCSS.Editor
         public T value { get; set; }
     }
 
-
     public struct Int : IPortValue<int>
     {
         public int value { get; set; }
-        public SkillDataType type { get { SkillTypeAdapters.dic_type_enum.TryGetValue(value.GetType(), out SkillDataType enumType); return enumType; } set { } }
+        public SkillDataType type { get { return TypeConvert.GetSkillDataTypeByType(value.GetType()); } set { } }
 
         public Int(int value) => this.value = value;
 
@@ -29,7 +28,7 @@ namespace BCSS.Editor
     public struct Float : IPortValue<float>
     {
         public float value { get; set; }
-        public SkillDataType type { get { SkillTypeAdapters.dic_type_enum.TryGetValue(value.GetType(), out SkillDataType enumType); return enumType; } set { } }
+        public SkillDataType type { get { return TypeConvert.GetSkillDataTypeByType(value.GetType()); } set { } }
 
         public Float(float value) => this.value = value;
 
@@ -40,7 +39,7 @@ namespace BCSS.Editor
     public struct V2 : IPortValue<Vector2>
     {
         public Vector2 value { get; set; }
-        public SkillDataType type { get { SkillTypeAdapters.dic_type_enum.TryGetValue(value.GetType(), out SkillDataType enumType); return enumType; } set { } }
+        public SkillDataType type { get { return TypeConvert.GetSkillDataTypeByType(value.GetType()); } set { } }
 
         public V2(Vector3 value) => this.value = value;
 
@@ -51,7 +50,7 @@ namespace BCSS.Editor
     public struct V3 : IPortValue<Vector3>
     {
         public Vector3 value { get; set; }
-        public SkillDataType type { get { SkillTypeAdapters.dic_type_enum.TryGetValue(value.GetType(), out SkillDataType enumType); return enumType; } set { } }
+        public SkillDataType type { get { return TypeConvert.GetSkillDataTypeByType(value.GetType()); } set { } }
 
         public V3(Vector3 value) => this.value = value;
 

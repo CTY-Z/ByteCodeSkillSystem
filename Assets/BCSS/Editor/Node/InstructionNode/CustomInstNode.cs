@@ -35,10 +35,10 @@ namespace BCSS.Editor
 
         protected override void Process()
         {
-            foreach (NodePort data in GetAllPorts())
+            foreach (NodePort port in GetAllPorts())
             {
                 IPort i = null;
-                data.GetInputValue(ref i);
+                port.GetInputValue(ref i);
 
                 switch (i.type)
                 {
@@ -50,9 +50,9 @@ namespace BCSS.Editor
             }
         }
 
-        public void ProcessIportData<T, K>(IPort data) where T : IPortValue<K>
+        public void ProcessIportData<T, K>(IPort portValue) where T : IPortValue<K>
         {
-            T value = (T)data;
+            T value = (T)portValue;
             Debug.Log(value.value);
         }
 
@@ -92,19 +92,19 @@ namespace BCSS.Editor
         {
             var parameterType = new GenericMenu();
 
-            foreach (var paramType in SkillTypeAdapters.dic_type_enum.Keys)
+            foreach (var paramType in TypeConvert.dic_type_enum.Keys)
             {
                 parameterType.AddItem(new GUIContent(paramType.Name), false, () =>
                 {
                     var identifier = System.Guid.NewGuid().ToString();
-
                     PortData data = GetPortData(identifier, paramType);
 
                     dic_inputPortID_portData.Add(identifier, data);
-                    list_input.Add(SkillTypeAdapters.GetInstanceByPortValueType(paramType));
-
+                    
+                    IPort value = TypeConvert.GetInstanceByPortValueType(paramType);
+                    list_input.Add(value);
                     UpdatePortsForField(nameof(list_input));
-                    subGraph.AddPortValue(identifier, GetPortValue(identifier));
+                    subGraph.AddPortValue(identifier, value);
                 });
             }
 
@@ -140,9 +140,9 @@ namespace BCSS.Editor
 
             foreach (var item in dic_inputPortID_portData)
             {
+                idx++;
                 if (item.Key == identifier)
                     break;
-                idx++;
             }
 
             if (idx >= 0)
@@ -198,13 +198,20 @@ namespace BCSS.Editor
         }
         #endregion
 
-        private IPort GetPortValue(string dentifier)
+        private IPort GetPortValue(string identifier)
         {
             IPort value = null;
 
-            NodePort port = GetPort(nameof(list_input), dentifier);
-            TryGetInputValue(port.fieldName, ref value);
-            //port.GetInputValue(ref value);
+            int idx = -1;
+            foreach (var item in dic_inputPortID_portData)
+            {
+                idx++;
+                if (identifier == item.Key)
+                    break;
+            }
+
+            if (idx >= 0)
+                value = list_input[idx];
 
             return value;
         }
@@ -222,8 +229,7 @@ namespace BCSS.Editor
             if (portValue == null)
                 portValue = new Int();
 
-            Type dataType = null;
-            SkillTypeAdapters.dic_enum_type.TryGetValue(portValue.type, out dataType);
+            Type dataType = TypeConvert.GetTypeBySkillDataType(portValue.type);
             PortData data = new PortData()
             {
                 displayName = dataType.Name,
