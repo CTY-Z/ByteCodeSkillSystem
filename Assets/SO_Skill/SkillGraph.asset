@@ -1,0 +1,794 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c683e841ac5b6d3408cf39e3043567b3, type: 3}
+  m_Name: SkillGraph
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 2baf7e071f354524c9947047b8bb2b51, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: nodes
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[GraphProcessor.BaseNode, com.alelievr.NodeGraphProcessor.Runtime]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 1|NumNode, Assembly-CSharp-Editor
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: 93e06a52-c4b5-41ac-a4ee-090b7ba2c9b7
+    - Name: computeOrder
+      Entry: 3
+      Data: 0
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -123.479141
+    - Name: 
+      Entry: 4
+      Data: 164.479111
+    - Name: 
+      Entry: 4
+      Data: 156
+    - Name: 
+      Entry: 4
+      Data: 94.0000153
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: num
+      Entry: 4
+      Data: 50
+    - Name: output
+      Entry: 4
+      Data: 50
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|BCSS.Editor.FloatNode, Assembly-CSharp-Editor
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: 38aac0e8-ff2c-43ea-9e0f-2a5282280851
+    - Name: computeOrder
+      Entry: 3
+      Data: 1
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 75.99998
+    - Name: 
+      Entry: 4
+      Data: 261.4791
+    - Name: 
+      Entry: 4
+      Data: 146.999969
+    - Name: 
+      Entry: 4
+      Data: 75.00003
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: input
+      Entry: 4
+      Data: 50
+    - Name: output
+      Entry: 7
+      Data: 3|BCSS.Editor.Float, Assembly-CSharp-Editor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|NumNode, Assembly-CSharp-Editor
+    - Name: nodeCustomName
+      Entry: 1
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: 6b89a0ae-a128-4f04-a68a-a2a8956af3a4
+    - Name: computeOrder
+      Entry: 3
+      Data: 2
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -121.417496
+    - Name: 
+      Entry: 4
+      Data: 61.7074852
+    - Name: 
+      Entry: 4
+      Data: 158
+    - Name: 
+      Entry: 4
+      Data: 94.0000153
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: num
+      Entry: 4
+      Data: 60
+    - Name: output
+      Entry: 4
+      Data: 60
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|BCSS.Editor.FloatNode, Assembly-CSharp-Editor
+    - Name: nodeCustomName
+      Entry: 1
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: cde69e65-ab5b-4c42-9d5f-754fbdfc40b8
+    - Name: computeOrder
+      Entry: 3
+      Data: 3
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 91.2976
+    - Name: 
+      Entry: 4
+      Data: 117
+    - Name: 
+      Entry: 4
+      Data: 146.999908
+    - Name: 
+      Entry: 4
+      Data: 75.0000153
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: input
+      Entry: 4
+      Data: 60
+    - Name: output
+      Entry: 7
+      Data: 6|BCSS.Editor.Float, Assembly-CSharp-Editor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|BCSS.Editor.CustomInstNode, Assembly-CSharp-Editor
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: fc1839c2-0963-42e3-94e9-ec77e9b77925
+    - Name: computeOrder
+      Entry: 3
+      Data: 6
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 403.9675
+    - Name: 
+      Entry: 4
+      Data: 127.422516
+    - Name: 
+      Entry: 4
+      Data: 264.000031
+    - Name: 
+      Entry: 4
+      Data: 191
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: list_input
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[BCSS.Editor.IPort, Assembly-CSharp-Editor]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 9|BCSS.Editor.Float, Assembly-CSharp-Editor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|BCSS.Editor.Float, Assembly-CSharp-Editor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|BCSS.Editor.V3, Assembly-CSharp-Editor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: list_output
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[BCSS.Editor.IPort, Assembly-CSharp-Editor]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: list_inputPortIdentifier
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 1
+      Data: 9ca353e3-c313-478b-81a5-73ad0b28fee2
+    - Name: 
+      Entry: 1
+      Data: d2977c90-68d2-4aaa-8eb9-69021216b928
+    - Name: 
+      Entry: 1
+      Data: b7e491c4-a356-464e-a152-a7f59d4adcfe
+    - Name: 
+      Entry: 1
+      Data: a1d18cac-d5ec-4fb9-bfe4-e0493b415daa
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: list_outputPortIdentifier
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: subGraph
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|BCSS.Editor.IntNode, Assembly-CSharp-Editor
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: ad39cde7-a6da-470b-b7a2-80ba2c9238e0
+    - Name: computeOrder
+      Entry: 3
+      Data: 4
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 88.90242
+    - Name: 
+      Entry: 4
+      Data: -11.2689972
+    - Name: 
+      Entry: 4
+      Data: 147.000015
+    - Name: 
+      Entry: 4
+      Data: 74.99999
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: false
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: input
+      Entry: 3
+      Data: 80
+    - Name: output
+      Entry: 7
+      Data: 16|BCSS.Editor.Int, Assembly-CSharp-Editor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|BCSS.Editor.Vector3Node, Assembly-CSharp-Editor
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: b3d0b9ae-e019-4a92-8411-e8f40730b744
+    - Name: computeOrder
+      Entry: 3
+      Data: 5
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 52.9781151
+    - Name: 
+      Entry: 4
+      Data: 378.562622
+    - Name: 
+      Entry: 4
+      Data: 147.000031
+    - Name: 
+      Entry: 4
+      Data: 75
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: true
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: input
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 18|BCSS.Editor.V3, Assembly-CSharp-Editor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: groups
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: skillBlackBoard
+      Entry: 7
+      Data: 20|BCSS.Editor.SkillBlackBoard, Assembly-CSharp-Editor
+    - Name: TestEvent
+      Entry: 7
+      Data: 21|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 22|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: TestId
+      Entry: 7
+      Data: 23|System.Collections.Generic.Dictionary`2[[System.Int64, mscorlib],[System.Int64,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 24|System.Collections.Generic.GenericEqualityComparer`1[[System.Int64,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: dic_id_entryValue
+      Entry: 7
+      Data: 25|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[BCSS.Editor.IPort,
+        Assembly-CSharp-Editor]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 26|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  serializedNodes: []
+  edges:
+  - GUID: b04ce4c7-2dab-4281-9938-7f2f5364c210
+    owner: {fileID: 11400000}
+    inputNodeGUID: fc1839c2-0963-42e3-94e9-ec77e9b77925
+    outputNodeGUID: cde69e65-ab5b-4c42-9d5f-754fbdfc40b8
+    inputFieldName: list_input
+    outputFieldName: output
+    inputPortIdentifier: d2977c90-68d2-4aaa-8eb9-69021216b928
+    outputPortIdentifier: 
+  - GUID: a04ddd8e-8928-4f01-9ab4-e64820e1d4d2
+    owner: {fileID: 11400000}
+    inputNodeGUID: cde69e65-ab5b-4c42-9d5f-754fbdfc40b8
+    outputNodeGUID: 6b89a0ae-a128-4f04-a68a-a2a8956af3a4
+    inputFieldName: input
+    outputFieldName: output
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 351eae09-cc6a-4dcf-a1b3-295f31df985a
+    owner: {fileID: 11400000}
+    inputNodeGUID: fc1839c2-0963-42e3-94e9-ec77e9b77925
+    outputNodeGUID: 38aac0e8-ff2c-43ea-9e0f-2a5282280851
+    inputFieldName: list_input
+    outputFieldName: output
+    inputPortIdentifier: b7e491c4-a356-464e-a152-a7f59d4adcfe
+    outputPortIdentifier: 
+  - GUID: de742870-0ad2-43c7-b1c3-e1d27b342f12
+    owner: {fileID: 11400000}
+    inputNodeGUID: fc1839c2-0963-42e3-94e9-ec77e9b77925
+    outputNodeGUID: ad39cde7-a6da-470b-b7a2-80ba2c9238e0
+    inputFieldName: list_input
+    outputFieldName: output
+    inputPortIdentifier: 9ca353e3-c313-478b-81a5-73ad0b28fee2
+    outputPortIdentifier: 
+  - GUID: bb4f7314-ea1f-4edb-8b86-833ba0212d55
+    owner: {fileID: 11400000}
+    inputNodeGUID: fc1839c2-0963-42e3-94e9-ec77e9b77925
+    outputNodeGUID: b3d0b9ae-e019-4a92-8411-e8f40730b744
+    inputFieldName: list_input
+    outputFieldName: output
+    inputPortIdentifier: a1d18cac-d5ec-4fb9-bfe4-e0493b415daa
+    outputPortIdentifier: 
+  stackNodes: []
+  pinnedElements:
+  - position:
+      serializedVersion: 2
+      x: 0
+      y: 334
+      width: 210
+      height: 208
+    opened: 1
+    editorType:
+      serializedType: GraphProcessor.ExposedParameterView, com.alelievr.NodeGraphProcessor.Editor,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - position:
+      serializedVersion: 2
+      x: 212
+      y: 342
+      width: 150
+      height: 200
+    opened: 1
+    editorType:
+      serializedType: BCSS.Editor.SkillProcessorView, Assembly-CSharp-Editor, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  exposedParameters:
+  - rid: 8089076288464355332
+  - rid: 8089076288464355336
+  - rid: 8089076288464355340
+  - rid: 8089076288464355344
+  - rid: 8089076288464355564
+  - rid: 8089076307947685484
+  - rid: 8089076307947685492
+  serializedParameterList: []
+  stickyNotes: []
+  position: {x: 399, y: 92, z: 0}
+  scale: {x: 0.7561437, y: 0.7561437, z: 1}
+  isSubGraph: 0
+  preGraph: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 8089076288464355332
+      type: {class: Vector3Parameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 5ac76ab7-b830-4d62-bb03-09cfcf5ae36a
+        name: New Vector 3
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 8089076288464355333
+        val: {x: 0, y: 0, z: 0}
+    - rid: 8089076288464355333
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 5ac76ab7-b830-4d62-bb03-09cfcf5ae36a
+    - rid: 8089076288464355336
+      type: {class: BoundsParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 12592fb7-6425-470b-9ed6-10abb5b006bc
+        name: New Bounds
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 8089076288464355337
+        val:
+          m_Center: {x: 0, y: 0, z: 0}
+          m_Extent: {x: 0, y: 0, z: 0}
+    - rid: 8089076288464355337
+      type: {class: ExposedParameter/Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 12592fb7-6425-470b-9ed6-10abb5b006bc
+    - rid: 8089076288464355340
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 1da197ed-0bfe-4b18-91bf-957dc902ea52
+        name: TestFloat
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 8089076288464355341
+        val: 0
+    - rid: 8089076288464355341
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 1da197ed-0bfe-4b18-91bf-957dc902ea52
+        mode: 0
+        min: 0
+        max: 1
+    - rid: 8089076288464355344
+      type: {class: IntParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 1206dee5-6112-4a06-a5f5-bfb1f6795f59
+        name: New Int
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 8089076288464355345
+        val: 0
+    - rid: 8089076288464355345
+      type: {class: IntParameter/IntSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 1206dee5-6112-4a06-a5f5-bfb1f6795f59
+        mode: 0
+        min: 0
+        max: 10
+    - rid: 8089076288464355564
+      type: {class: Vector2Parameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: d3a5a518-dd24-4901-97b5-f15362a644fb
+        name: New Vector 2
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 8089076288464355565
+        val: {x: 0, y: 0}
+    - rid: 8089076288464355565
+      type: {class: Vector2Parameter/Vector2Settings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: d3a5a518-dd24-4901-97b5-f15362a644fb
+        mode: 0
+        min: 0
+        max: 1
+    - rid: 8089076307947685484
+      type: {class: IntParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: 63003ed0-49f6-4a40-96f9-b40454633f94
+        name: New Int 0
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 8089076307947685485
+        val: 0
+    - rid: 8089076307947685485
+      type: {class: IntParameter/IntSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: 63003ed0-49f6-4a40-96f9-b40454633f94
+        mode: 0
+        min: 0
+        max: 10
+    - rid: 8089076307947685492
+      type: {class: FloatParameter, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        guid: b56ceeb3-a3b6-4a8a-82af-05dcbaea35f8
+        name: New Float
+        type: 
+        serializedValue:
+          serializedType: 
+          serializedName: 
+          serializedValue: 
+        input: 1
+        settings:
+          rid: 8089076307947685493
+        val: 0
+    - rid: 8089076307947685493
+      type: {class: FloatParameter/FloatSettings, ns: GraphProcessor, asm: com.alelievr.NodeGraphProcessor.Runtime}
+      data:
+        isHidden: 0
+        expanded: 0
+        guid: b56ceeb3-a3b6-4a8a-82af-05dcbaea35f8
+        mode: 0
+        min: 0
+        max: 1
