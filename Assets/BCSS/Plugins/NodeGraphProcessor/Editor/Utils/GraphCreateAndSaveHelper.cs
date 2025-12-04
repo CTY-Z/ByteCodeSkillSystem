@@ -16,7 +16,7 @@ namespace GraphProcessor
         /// <summary>
         /// NodeGraphProcessor路径前缀
         /// </summary>
-        public const string NodeGraphProcessorPathPrefix = "Assets/BC v1.0/Plugins/NodeGraphProcessor";
+        public const string NodeGraphProcessorPathPrefix = "Assets/BCSS/Plugins/NodeGraphProcessor";
 
         public static BaseGraph CreateGraph(Type graphType)
         {
