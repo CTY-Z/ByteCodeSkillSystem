@@ -1,9 +1,11 @@
 ﻿using BCSS.Editor;
 using GraphProcessor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEditor.Graphs;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -24,6 +26,8 @@ namespace BCSS.Editor
             //DrawDefaultInspector();
 
             m_view.OnCustomNodeInputChanged += OnInputChanged;
+            this.onPortConnected += OnPortConnected;
+            this.onPortDisconnected += OnPortDisconnected;
 
             AddDeleteButtonToInputPorts();
             AddDeleteButtonToOutputPorts();
@@ -82,6 +86,8 @@ namespace BCSS.Editor
             base.Disable();
 
             m_view.OnCustomNodeInputChanged -= OnInputChanged;
+            this.onPortConnected -= OnPortConnected;
+            this.onPortDisconnected -= OnPortDisconnected;
         }
 
         public override bool RefreshPorts()
@@ -144,6 +150,70 @@ namespace BCSS.Editor
                 portView.Add(btn);
             }
         }
+
+#region TypeCheck
+        public void OnPortConnected(PortView port)
+        {
+            if (port.direction != Direction.Input)
+                return;
+
+            bool anyInvalid = false;
+            foreach (var ev in port.GetEdges())
+            {
+                var edgeView = ev as EdgeView;
+                if (edgeView == null)
+                    continue;
+                PortView other = edgeView.output as PortView;
+
+                IPort value = null;
+                edgeView.serializedEdge.outputNode.TryGetOutputValue(edgeView.serializedEdge.inputPort, edgeView.serializedEdge.outputPort, ref value);
+
+                if (value == null)
+                    continue;
+
+                Type outputType = TypeConvert.GetTypeBySkillDataType(value.type);
+                if (!IsCompatible(port.portData.displayType, outputType))
+                {
+                    anyInvalid = true;
+                    break;
+                }
+            }
+
+            if (anyInvalid)
+                MarkPortInvalid(port);
+            else
+                ClearPortInvalid(port);
+        }
+
+        void OnPortDisconnected(PortView port)
+        {
+            if (port.direction != Direction.Input)
+                return;
+            ClearPortInvalid(port);
+        }
+
+        bool IsCompatible(Type inType, Type outType)
+        {
+            if (inType == null || outType == null)
+                return true;
+
+            bool flag = TypeConvert.HasImplicitConversion(inType, outType);
+            return flag;
+        }
+
+        void MarkPortInvalid(Port port)
+        {
+            port.AddToClassList("invalid-connection");
+            port.style.borderLeftWidth = 10;
+            port.style.borderLeftColor = new Color(1f, 0.2f, 0.2f);
+        }
+        void ClearPortInvalid(Port port)
+        {
+            port.RemoveFromClassList("invalid-connection");
+            port.style.borderLeftWidth = 0;
+        }
+#endregion
+
         public void OnAddInputPort()
         {
             if (m_node.subGraph == null)

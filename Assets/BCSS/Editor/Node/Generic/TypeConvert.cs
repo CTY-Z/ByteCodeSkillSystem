@@ -61,6 +61,9 @@ namespace BCSS.Editor
 
         public static bool HasImplicitConversion(Type from, Type to)
         {
+            if (from == to)
+                return true;
+
             return from.GetMethods(BindingFlags.Static | BindingFlags.Public)
                        .Union(to.GetMethods(BindingFlags.Static | BindingFlags.Public))
                        .Any(mi => (mi.Name == "op_Implicit" || mi.Name == "op_Explicit")

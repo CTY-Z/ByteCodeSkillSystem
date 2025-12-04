@@ -57,9 +57,24 @@ namespace BCSS.Editor
             }
         }
 
-        public void AddNewOutputPort()
+        public void RefreshOutputPort(List<string> list_identifier)
         {
-            list_outputPortIdentifier.Add(System.Guid.NewGuid().ToString());
+            foreach (string identifier in list_identifier)
+            {
+                if (list_outputPortIdentifier.Contains(identifier))
+                {
+
+                }
+                else
+                {
+                    RemoveOutputPort(identifier);
+                }
+            }
+        }
+
+        public void AddNewOutputPort(string identifier)
+        {
+            list_outputPortIdentifier.Add(identifier);
             UpdatePortsForField(nameof(list_output));
         }
 

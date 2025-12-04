@@ -33,19 +33,46 @@ namespace BCSS.Editor
         public SkillGraph subGraph;
         public override string name => "Custom";
 
+        protected override void Enable()
+        {
+            base.Enable();
+
+            onAfterEdgeConnected += OnAfterEdgeConnected;
+        }
+
+        protected override void Disable()
+        {
+            base.Disable();
+
+            onAfterEdgeConnected -= OnAfterEdgeConnected;
+        }
+
+        public void OnAfterEdgeConnected(SerializableEdge edges)
+        {
+            if (edges.inputNode == this)
+            {
+
+                IPort value = null;
+                edges.outputNode.TryGetOutputValue(edges.outputPort, edges.inputPort, ref value);
+
+            }
+        }
         protected override void Process()
         {
             foreach (NodePort port in GetAllPorts())
             {
-                IPort i = null;
-                port.GetInputValue(ref i);
+                IPort portValue = null;
+                port.GetInputValue(ref portValue);
 
-                switch (i.type)
+                if (portValue == null)
+                    continue;
+
+                switch (portValue.type)
                 {
-                    case SkillDataType.Int:     ProcessIportData<Int, int>(i);     break;
-                    case SkillDataType.Float:   ProcessIportData<Float, float>(i); break;
-                    case SkillDataType.Vector2: ProcessIportData<V2, Vector2>(i);  break;
-                    case SkillDataType.Vector3: ProcessIportData<V3, Vector3>(i);  break;
+                    case SkillDataType.Int:     ProcessIportData<Int, int>(portValue);     break;
+                    case SkillDataType.Float:   ProcessIportData<Float, float>(portValue); break;
+                    case SkillDataType.Vector2: ProcessIportData<V2, Vector2>(portValue);  break;
+                    case SkillDataType.Vector3: ProcessIportData<V3, Vector3>(portValue);  break;
                 }
             }
         }
@@ -88,6 +115,9 @@ namespace BCSS.Editor
                 yield return item;
         }
 
+        /// <summary>
+        /// 由NodeView创建
+        /// </summary>
         public void AddNewInputPort()
         {
             var parameterType = new GenericMenu();
@@ -111,6 +141,11 @@ namespace BCSS.Editor
             parameterType.ShowAsContext();
         }
 
+        /// <summary>
+        /// 界面内动态创建
+        /// </summary>
+        /// <param name="identifier"></param>
+        /// <param name="portValue"></param>
         public void AddNewInputPort(string identifier, IPort portValue)
         {
             PortData data = GetPortData(identifier, portValue);

@@ -36,7 +36,7 @@ MonoBehaviour:
       Data: 
     - Name: GUID
       Entry: 1
-      Data: a32119d6-52b6-45d2-980c-94c9b0aa237f
+      Data: 80a35b77-5fd9-4476-8625-f4790eadad95
     - Name: computeOrder
       Entry: 3
       Data: 0
@@ -45,22 +45,22 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 294.3913
+      Data: 274
     - Name: 
       Entry: 4
-      Data: 285.782623
+      Data: 262
     - Name: 
       Entry: 4
-      Data: 92.00003
+      Data: 92
     - Name: 
       Entry: 4
-      Data: 123.000031
+      Data: 146
     - Name: 
       Entry: 8
       Data: 
     - Name: expanded
       Entry: 5
-      Data: false
+      Data: true
     - Name: debug
       Entry: 5
       Data: false
@@ -75,16 +75,19 @@ MonoBehaviour:
       Data: 2|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 1
-      Data: 760a320b-6106-46bc-97c6-4b2c05d282a9
+      Data: f613817c-bada-42fa-861c-35a637aaaa61
     - Name: 
       Entry: 1
-      Data: 0f34dcba-0226-458c-9774-1807111d522d
+      Data: 3f09a91f-1033-405b-a3f7-75c9f626e415
     - Name: 
       Entry: 1
-      Data: e42e55d5-007d-495b-9220-d47c7470cc30
+      Data: 35160bd3-01da-4d73-a43b-88cd843fbef8
+    - Name: 
+      Entry: 1
+      Data: dd58b0e9-0404-41d8-b6c3-fd5818b74f86
     - Name: 
       Entry: 13
       Data: 
@@ -172,16 +175,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 1
-      Data: 9ca353e3-c313-478b-81a5-73ad0b28fee2
+      Data: f613817c-bada-42fa-861c-35a637aaaa61
     - Name: $v
       Entry: 7
-      Data: 11|BCSS.Editor.Float, Assembly-CSharp-Editor
+      Data: 11|BCSS.Editor.Int, Assembly-CSharp-Editor
     - Name: 
       Entry: 8
       Data: 
@@ -193,10 +196,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: d2977c90-68d2-4aaa-8eb9-69021216b928
+      Data: 3f09a91f-1033-405b-a3f7-75c9f626e415
     - Name: $v
       Entry: 7
-      Data: 12|BCSS.Editor.V3, Assembly-CSharp-Editor
+      Data: 12|BCSS.Editor.Float, Assembly-CSharp-Editor
     - Name: 
       Entry: 8
       Data: 
@@ -208,10 +211,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: b7e491c4-a356-464e-a152-a7f59d4adcfe
+      Data: 35160bd3-01da-4d73-a43b-88cd843fbef8
     - Name: $v
       Entry: 7
-      Data: 13|BCSS.Editor.Float, Assembly-CSharp-Editor
+      Data: 13|BCSS.Editor.V3, Assembly-CSharp-Editor
     - Name: 
       Entry: 8
       Data: 
@@ -223,10 +226,25 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: a1d18cac-d5ec-4fb9-bfe4-e0493b415daa
+      Data: cd58ef92-3efc-47bf-940c-98560d1184f7
     - Name: $v
       Entry: 7
       Data: 14|BCSS.Editor.Float, Assembly-CSharp-Editor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: 2eed816d-fa7f-4f85-8058-bfa74918eafc
+    - Name: $v
+      Entry: 7
+      Data: 15|BCSS.Editor.V3, Assembly-CSharp-Editor
     - Name: 
       Entry: 8
       Data: 
@@ -246,10 +264,10 @@ MonoBehaviour:
   exposedParameters: []
   serializedParameterList: []
   stickyNotes: []
-  position: {x: -111, y: -138, z: 0}
-  scale: {x: 1.15, y: 1.15, z: 1}
+  position: {x: 1, y: -117, z: 0}
+  scale: {x: 1, y: 1, z: 1}
   isSubGraph: 1
-  preGraph: {fileID: 0}
+  preGraph: {fileID: 11400000, guid: da9a774e5a825df46886e995ce4596f4, type: 2}
   references:
     version: 2
     RefIds: []
