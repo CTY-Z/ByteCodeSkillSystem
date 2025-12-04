@@ -7,6 +7,7 @@ namespace BCSS.Editor
 {
     public enum SkillDataType
     {
+        None,
         Int,
         Float,
         Vector2,
@@ -30,6 +31,25 @@ namespace BCSS.Editor
             { typeof(Vector2), SkillDataType.Vector2  },
             { typeof(Vector3), SkillDataType.Vector3  },
         };
+
+        public static IPort GetInstanceByPortValueType(Type portValueType)
+        {
+            SkillDataType typeEnum = SkillDataType.None;
+            dic_type_enum.TryGetValue(portValueType, out typeEnum);
+
+            if (typeEnum == SkillDataType.None)
+                return new Int();
+
+            switch (typeEnum)
+            {
+                case SkillDataType.Int:     return new Int();
+                case SkillDataType.Float:   return new Float();
+                case SkillDataType.Vector2: return new V2();
+                case SkillDataType.Vector3: return new V3();
+            }
+
+            return new Int();
+        }
 
         //int
         public static IPort Convert_int_To_Int(int from) => new Int(from);
