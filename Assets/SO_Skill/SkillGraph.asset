@@ -28,7 +28,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 8
     - Name: 
       Entry: 7
       Data: 1|NumNode, Assembly-CSharp-Editor
@@ -94,16 +94,16 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 75.99998
+      Data: 90.0794
     - Name: 
       Entry: 4
-      Data: 261.4791
+      Data: 220.772812
     - Name: 
       Entry: 4
-      Data: 146.999969
+      Data: 147.000092
     - Name: 
       Entry: 4
-      Data: 75.00003
+      Data: 74.9999542
     - Name: 
       Entry: 8
       Data: 
@@ -295,16 +295,16 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 76.61248
+      Data: 91.07943
     - Name: 
       Entry: 4
-      Data: 378.000031
+      Data: 325.70462
     - Name: 
       Entry: 4
-      Data: 147.000031
+      Data: 147.000092
     - Name: 
       Entry: 4
-      Data: 74.99997
+      Data: 75
     - Name: 
       Entry: 8
       Data: 
@@ -343,13 +343,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 11|BCSS.Editor.CustomInstNode, Assembly-CSharp-Editor
+      Data: 11|BCSS.Editor.Vector3Node, Assembly-CSharp-Editor
     - Name: nodeCustomName
-      Entry: 6
+      Entry: 1
       Data: 
     - Name: GUID
       Entry: 1
-      Data: 4fdabdf9-794d-4d5c-a940-5b0a395e7a59
+      Data: f734681a-5835-472a-8965-6988fcd099f9
     - Name: computeOrder
       Entry: 3
       Data: 6
@@ -358,16 +358,79 @@ MonoBehaviour:
       Data: UnityEngine.Rect, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 319.677521
+      Data: 96.12483
     - Name: 
       Entry: 4
-      Data: 23.0000134
+      Data: 433.613281
     - Name: 
       Entry: 4
-      Data: 263.999969
+      Data: 147.000015
     - Name: 
       Entry: 4
-      Data: 214.999985
+      Data: 75
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: expanded
+      Entry: 5
+      Data: true
+    - Name: debug
+      Entry: 5
+      Data: false
+    - Name: nodeLock
+      Entry: 5
+      Data: false
+    - Name: input
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: output
+      Entry: 7
+      Data: 12|BCSS.Editor.V3, Assembly-CSharp-Editor
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|BCSS.Editor.CustomInstNode, Assembly-CSharp-Editor
+    - Name: nodeCustomName
+      Entry: 6
+      Data: 
+    - Name: GUID
+      Entry: 1
+      Data: ee6b1c87-41a6-46ca-975f-3bcc6ce60ace
+    - Name: computeOrder
+      Entry: 3
+      Data: 7
+    - Name: position
+      Entry: 7
+      Data: UnityEngine.Rect, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 488.375763
+    - Name: 
+      Entry: 4
+      Data: 76.14512
+    - Name: 
+      Entry: 4
+      Data: 264.000031
+    - Name: 
+      Entry: 4
+      Data: 214.000031
     - Name: 
       Entry: 8
       Data: 
@@ -382,29 +445,11 @@ MonoBehaviour:
       Data: false
     - Name: list_input
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[BCSS.Editor.IPort, Assembly-CSharp-Editor]],
+      Data: 14|System.Collections.Generic.List`1[[BCSS.Editor.IPort, Assembly-CSharp-Editor]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 13|BCSS.Editor.Int, Assembly-CSharp-Editor
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 14|BCSS.Editor.V3, Assembly-CSharp-Editor
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 15|BCSS.Editor.Float, Assembly-CSharp-Editor
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -413,7 +458,7 @@ MonoBehaviour:
       Data: 
     - Name: list_output
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[BCSS.Editor.IPort, Assembly-CSharp-Editor]],
+      Data: 15|System.Collections.Generic.List`1[[BCSS.Editor.IPort, Assembly-CSharp-Editor]],
         mscorlib
     - Name: 
       Entry: 12
@@ -426,60 +471,27 @@ MonoBehaviour:
       Data: 
     - Name: dic_inputPortID_portData
       Entry: 7
-      Data: 17|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[GraphProcessor.PortData,
-        com.alelievr.NodeGraphProcessor.Runtime]], mscorlib
+      Data: 16|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[BCSS.Editor.IPort,
+        Assembly-CSharp-Editor]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 18|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 17|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 1
-      Data: f613817c-bada-42fa-861c-35a637aaaa61
+      Data: 9e3e060c-64b9-4a8a-b49a-8063ac5b185c
     - Name: $v
       Entry: 7
-      Data: 19|GraphProcessor.PortData, com.alelievr.NodeGraphProcessor.Runtime
-    - Name: identifier
-      Entry: 1
-      Data: f613817c-bada-42fa-861c-35a637aaaa61
-    - Name: displayName
-      Entry: 1
-      Data: Int32
-    - Name: displayType
-      Entry: 7
-      Data: 20|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: System.Int32, mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: acceptMultipleEdges
-      Entry: 5
-      Data: false
-    - Name: sizeInPixel
-      Entry: 3
-      Data: 0
-    - Name: tooltip
-      Entry: 6
-      Data: 
-    - Name: vertical
-      Entry: 5
-      Data: false
-    - Name: showPortIcon
-      Entry: 5
-      Data: true
-    - Name: portIconName
-      Entry: 6
-      Data: 
+      Data: 18|BCSS.Editor.Int, Assembly-CSharp-Editor
     - Name: 
       Entry: 8
       Data: 
@@ -491,43 +503,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: f63f0ed2-7ee1-4026-abb9-d2f808e9e220
+      Data: 313773d9-32f1-48d9-ba76-487321271523
     - Name: $v
       Entry: 7
-      Data: 21|GraphProcessor.PortData, com.alelievr.NodeGraphProcessor.Runtime
-    - Name: identifier
-      Entry: 1
-      Data: f63f0ed2-7ee1-4026-abb9-d2f808e9e220
-    - Name: displayName
-      Entry: 1
-      Data: Single
-    - Name: displayType
-      Entry: 7
-      Data: 22|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: System.Single, mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: acceptMultipleEdges
-      Entry: 5
-      Data: false
-    - Name: sizeInPixel
-      Entry: 3
-      Data: 0
-    - Name: tooltip
-      Entry: 6
-      Data: 
-    - Name: vertical
-      Entry: 5
-      Data: false
-    - Name: showPortIcon
-      Entry: 5
-      Data: true
-    - Name: portIconName
-      Entry: 6
-      Data: 
+      Data: 19|BCSS.Editor.Float, Assembly-CSharp-Editor
     - Name: 
       Entry: 8
       Data: 
@@ -539,43 +518,25 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: 35160bd3-01da-4d73-a43b-88cd843fbef8
+      Data: 6166321c-d55a-4d01-a51d-a51638a306ca
     - Name: $v
       Entry: 7
-      Data: 23|GraphProcessor.PortData, com.alelievr.NodeGraphProcessor.Runtime
-    - Name: identifier
-      Entry: 1
-      Data: 35160bd3-01da-4d73-a43b-88cd843fbef8
-    - Name: displayName
-      Entry: 1
-      Data: Vector3
-    - Name: displayType
-      Entry: 7
-      Data: 24|System.RuntimeType, mscorlib
-    - Name: 
-      Entry: 1
-      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+      Data: 20|BCSS.Editor.V3, Assembly-CSharp-Editor
     - Name: 
       Entry: 8
       Data: 
-    - Name: acceptMultipleEdges
-      Entry: 5
-      Data: false
-    - Name: sizeInPixel
-      Entry: 3
-      Data: 0
-    - Name: tooltip
-      Entry: 6
+    - Name: 
+      Entry: 8
       Data: 
-    - Name: vertical
-      Entry: 5
-      Data: false
-    - Name: showPortIcon
-      Entry: 5
-      Data: true
-    - Name: portIconName
-      Entry: 6
+    - Name: 
+      Entry: 7
       Data: 
+    - Name: $k
+      Entry: 1
+      Data: f1feb135-52ee-4705-ae77-507d2fe4ff83
+    - Name: $v
+      Entry: 7
+      Data: 21|BCSS.Editor.Int, Assembly-CSharp-Editor
     - Name: 
       Entry: 8
       Data: 
@@ -590,7 +551,7 @@ MonoBehaviour:
       Data: 
     - Name: list_outputPortIdentifier
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
+      Data: 22|System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -614,7 +575,7 @@ MonoBehaviour:
       Data: 
     - Name: groups
       Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
+      Data: 23|System.Collections.Generic.List`1[[GraphProcessor.Group, com.alelievr.NodeGraphProcessor.Runtime]],
         mscorlib
     - Name: 
       Entry: 12
@@ -627,14 +588,14 @@ MonoBehaviour:
       Data: 
     - Name: skillBlackBoard
       Entry: 7
-      Data: 27|BCSS.Editor.SkillBlackBoard, Assembly-CSharp-Editor
+      Data: 24|BCSS.Editor.SkillBlackBoard, Assembly-CSharp-Editor
     - Name: TestEvent
       Entry: 7
-      Data: 28|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+      Data: 25|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 29|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 26|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -650,11 +611,11 @@ MonoBehaviour:
       Data: 
     - Name: TestId
       Entry: 7
-      Data: 30|System.Collections.Generic.Dictionary`2[[System.Int64, mscorlib],[System.Int64,
+      Data: 27|System.Collections.Generic.Dictionary`2[[System.Int64, mscorlib],[System.Int64,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 31|System.Collections.Generic.GenericEqualityComparer`1[[System.Int64,
+      Data: 28|System.Collections.Generic.GenericEqualityComparer`1[[System.Int64,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -672,24 +633,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: dic_id_entryValue
-      Entry: 7
-      Data: 32|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[BCSS.Editor.IPort,
-        Assembly-CSharp-Editor]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 33|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
-        mscorlib]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
+      Entry: 6
       Data: 
   serializedNodes: []
   edges:
@@ -713,8 +657,8 @@ MonoBehaviour:
   pinnedElements:
   - position:
       serializedVersion: 2
-      x: 0
-      y: 334
+      x: 27
+      y: 268
       width: 210
       height: 208
     opened: 1
@@ -723,8 +667,8 @@ MonoBehaviour:
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   - position:
       serializedVersion: 2
-      x: 212
-      y: 342
+      x: 238
+      y: 276
       width: 150
       height: 200
     opened: 1
@@ -741,8 +685,8 @@ MonoBehaviour:
   - rid: 8089076307947685492
   serializedParameterList: []
   stickyNotes: []
-  position: {x: 246, y: 102, z: 0}
-  scale: {x: 0.7561437, y: 0.7561437, z: 1}
+  position: {x: 343, y: 80, z: 0}
+  scale: {x: 0.65751624, y: 0.65751624, z: 1}
   isSubGraph: 0
   preGraph: {fileID: 0}
   references:

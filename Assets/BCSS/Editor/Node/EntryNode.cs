@@ -1,6 +1,8 @@
 using GraphProcessor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Plastic.Newtonsoft.Json.Linq;
 using UnityEngine;
 
 namespace BCSS.Editor
@@ -9,8 +11,6 @@ namespace BCSS.Editor
     {
         [Output]
         public List<IPort> list_output;
-        [SerializeField]
-        private List<string> list_outputPortIdentifier;
 
         public override string name => "Entry";
 
@@ -22,8 +22,8 @@ namespace BCSS.Editor
 
         public override void InitializePorts()
         {
-            if (list_outputPortIdentifier == null)
-                list_outputPortIdentifier = new List<string>();
+            if (list_output == null)
+                list_output = new();
             base.InitializePorts();
         }
 
@@ -45,13 +45,16 @@ namespace BCSS.Editor
             //while (outputPortIdentifiers.Count > portCount)
             //    outputPortIdentifiers.RemoveAt(outputPortIdentifiers.Count - 1);
 
-            for (int i = 0; i < list_outputPortIdentifier.Count; i++)
+            SkillGraph m_graph = (SkillGraph)graph;
+
+            foreach (var item in m_graph.dic_id_entryValue)
             {
+                Type t = TypeConvert.GetTypeBySkillDataType(item.Value.type);
                 yield return new PortData
                 {
-                    displayName = $"Output  {i}",
-                    displayType = typeof(IPort),
-                    identifier = list_outputPortIdentifier[i],
+                    displayName = t.Name,
+                    displayType = t,
+                    identifier = item.Key,
                     acceptMultipleEdges = false
                 };
             }
@@ -59,33 +62,18 @@ namespace BCSS.Editor
 
         public void RefreshOutputPort(List<string> list_identifier)
         {
-            foreach (string identifier in list_identifier)
-            {
-                if (list_outputPortIdentifier.Contains(identifier))
-                {
-
-                }
-                else
-                {
-                    RemoveOutputPort(identifier);
-                }
-            }
-        }
-
-        public void AddNewOutputPort(string identifier)
-        {
-            list_outputPortIdentifier.Add(identifier);
             UpdatePortsForField(nameof(list_output));
         }
 
-        public void RemoveOutputPort(string identifier)
+        public void AddNewOutputPort(IPort portValue)
         {
-            int idx = list_outputPortIdentifier.IndexOf(identifier);
-            if (idx >= 0)
-            {
-                list_outputPortIdentifier.RemoveAt(idx);
-                UpdatePortsForField(nameof(list_output));
-            }
+            //list_output.Add(portValue);
+            UpdatePortsForField(nameof(list_output));
+        }
+
+        public void RemoveOutputPort(IPort portValue)
+        {
+            //list_output.Remove(portValue);
         }
     }
 }

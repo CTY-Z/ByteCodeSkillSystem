@@ -19,7 +19,7 @@ namespace BCSS.Editor
             base.OnCreated();
 
             foreach (var item in m_graph.dic_id_entryValue)
-                OnAddOutputPort(item.Key);
+                OnAddOutputPort(item.Value);
         }
 
         public override void Enable()
@@ -31,9 +31,9 @@ namespace BCSS.Editor
             m_node.RefreshOutputPort(m_graph.dic_id_entryValue.Keys.ToList());
         }
 
-        private void OnAddOutputPort(string identifier)
+        private void OnAddOutputPort(IPort portValue)
         {
-            m_node.AddNewOutputPort(identifier);
+            m_node.AddNewOutputPort(portValue);
         }
     }
 }

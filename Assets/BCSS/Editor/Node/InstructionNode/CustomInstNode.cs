@@ -26,7 +26,7 @@ namespace BCSS.Editor
         public List<IPort> list_output;
 
         [SerializeField]
-        private Dictionary<string, PortData> dic_inputPortID_portData;
+        private Dictionary<string, IPort> dic_inputPortID_portData;
         [SerializeField]
         private List<string> list_outputPortIdentifier;
 
@@ -111,12 +111,12 @@ namespace BCSS.Editor
             //while (outputPortIdentifiers.Count > portCount)
             //    outputPortIdentifiers.RemoveAt(outputPortIdentifiers.Count - 1);
 
-            foreach (PortData item in dic_inputPortID_portData.Values)
-                yield return item;
+            foreach (var item in dic_inputPortID_portData)
+                yield return GetNewPortData(item.Key, item.Value);
         }
 
         /// <summary>
-        /// ÓÉNodeView´´½¨
+        /// ï¿½ï¿½NodeViewï¿½ï¿½ï¿½ï¿½
         /// </summary>
         public void AddNewInputPort()
         {
@@ -127,11 +127,9 @@ namespace BCSS.Editor
                 parameterType.AddItem(new GUIContent(paramType.Name), false, () =>
                 {
                     var identifier = System.Guid.NewGuid().ToString();
-                    PortData data = GetPortData(identifier, paramType);
-
-                    dic_inputPortID_portData.Add(identifier, data);
                     
                     IPort value = TypeConvert.GetInstanceByPortValueType(paramType);
+                    dic_inputPortID_portData.Add(identifier, value);
                     list_input.Add(value);
                     UpdatePortsForField(nameof(list_input));
                     subGraph.AddPortValue(identifier, value);
@@ -142,14 +140,13 @@ namespace BCSS.Editor
         }
 
         /// <summary>
-        /// ½çÃæÄÚ¶¯Ì¬´´½¨
+        /// ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½
         /// </summary>
         /// <param name="identifier"></param>
         /// <param name="portValue"></param>
         public void AddNewInputPort(string identifier, IPort portValue)
         {
-            PortData data = GetPortData(identifier, portValue);
-            dic_inputPortID_portData.Add(identifier, data);
+            dic_inputPortID_portData.Add(identifier, portValue);
             list_input.Add(portValue);
 
             UpdatePortsForField(nameof(list_input));
@@ -164,32 +161,23 @@ namespace BCSS.Editor
                 if (dic_inputPortID_portData.ContainsKey(item.Key))
                     continue;
 
-                PortData data = GetPortData(item.Key, item.Value);
-                dic_inputPortID_portData.Add(item.Key, data);
+                dic_inputPortID_portData.Add(item.Key, item.Value);
             }
         }
 
         public void RemoveInputPort(string identifier)
         {
-            int idx = -1;
+            IPort value = null;
+            dic_inputPortID_portData.TryGetValue(identifier, out value);
 
-            foreach (var item in dic_inputPortID_portData)
+            if (list_input.Contains(value))
             {
-                idx++;
-                if (item.Key == identifier)
-                    break;
-            }
-
-            if (idx >= 0)
-            {
-                if (list_input != null && idx < list_input.Count)
-                    list_input.RemoveAt(idx);
-
+                list_input.Remove(value);
                 dic_inputPortID_portData.Remove(identifier);
-                subGraph.RemovePortValue(identifier);
             }
-            else
-                subGraph.RemovePortValue(identifier);
+
+            subGraph.RemovePortValue(identifier);
+            UpdatePortsForField(nameof(list_input));
         }
 
         #endregion
@@ -259,7 +247,7 @@ namespace BCSS.Editor
             v = value;
         }
 
-        private PortData GetPortData(string identifier, IPort portValue)
+        private PortData GetNewPortData(string identifier, IPort portValue)
         {
             if (portValue == null)
                 portValue = new Int();
@@ -275,7 +263,7 @@ namespace BCSS.Editor
 
             return data;
         }
-        private PortData GetPortData(string identifier, Type valueType)
+        private PortData GetNewPortData(string identifier, Type valueType)
         {
             PortData data = new PortData()
             {
